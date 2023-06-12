@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+  {% elif section.description %}
+    <meta name="description" content="{{ section.description }}">
+  {% endif %}
+
+  {% block rss %}{% endblock%}
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <title>heka.no</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <nav>
+        <a href="/">heka.no</a>
+        <a href="/blog/">blog</a>
+        <a href="/projects/">projects</a>
+      </nav>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      {% block content %} {% endblock %}
+    </div>
+  </section>
+</body>
+
+</html>

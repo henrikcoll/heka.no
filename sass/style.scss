@@ -1,0 +1,121 @@
+$background: #000;
+$color: #bfbab0;
+$accent: #59c2ff;
+$accent-text: #000;
+
+$text: oklch(100% 0 300.195);
+$color0: oklch(50% 0 300.195);
+$color1: oklch(83.1% 0.187 205.11);
+$color2: oklch(94.7% 0.236 107.91);
+$color3: oklch(65% 0.295 27);
+
+
+body {
+	background: $background;
+	color: $color;
+	font-family: 'Courier New';
+	font-size: 1.2em;
+	line-height: 1.32em;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	* {
+		padding: 0.5rem;
+	}
+}
+
+.index-list {
+	padding: 0;
+	li {
+		list-style: none;
+		span {
+			color: $color0;
+		}
+	}
+}
+
+.container {
+	max-width: 40rem;
+	margin: 0 auto;
+}
+
+.subtitle {
+	color: $color0;
+}
+
+.subtitle > div::before {
+		content: '// ';
+	}
+
+a, a:visited {
+	color: $color1;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+	background-color: $color1;
+}
+
+pre {
+	overflow-x: scroll;
+	max-width: 100%;
+	padding: 0.25rem;
+}
+
+blockquote {
+	background-color: #0f1419;
+	margin: 0;
+	padding: 0.5rem 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $color2;
+	font-size: 1.2em;
+	#border-bottom: 1px solid $accent;
+	margin: 2rem 0 0 0;
+}
+
+h1::before {
+	color: $color2;
+	content: '# ';
+}
+
+h2::before {
+	color: $color2;
+	content: '## ';
+}
+
+h3::before {
+	color: $color2;
+	content: '### ';
+}
+
+ul.breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  content: "/";
+}
+
+.notification {
+	padding: 1px 1rem;
+
+	&.danger {
+		color: #0f1419;
+		background-color: $color3;
+	}
+}

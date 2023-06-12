@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block rss %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="/projects/atom.xml", trailing_slash=false) }}">
+{% endblock %}
+
+{% block content %}
+  <div class="subtitle">
+    <div>Posted <strong>{{ page.date }}</strong></div>
+    {% if page.updated %}
+    <div>Updated <strong>{{ page.updated }}</strong></div>
+    {% endif %}
+  </div>
+
+  <h1 class="title">{{ page.title }}</h1>
+
+  {{ page.content | safe }}
+{% endblock content %}

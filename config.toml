@@ -1,0 +1,18 @@
+base_url = "https://heka.no"
+title = "heka.no"
+description = "henrik's personal website"
+
+compile_sass = true
+minify_html = true
+
+default_language = "en"
+generate_feed = true
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "ayu-dark"
+render_emoji = true
+
+[extra]
