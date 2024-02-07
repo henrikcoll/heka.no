@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% if page.description %}
-    <meta name="description" content="{{ page.description }}">
+  <meta name="description" content="{{ page.description }}">
   {% elif section.description %}
-    <meta name="description" content="{{ section.description }}">
+  <meta name="description" content="{{ section.description }}">
   {% endif %}
 
   {% block rss %}{% endblock%}
@@ -19,20 +19,22 @@
 </head>
 
 <body>
-  <section class="section">
-    <div class="container">
-      <nav>
-        <a href="/">heka.no</a>
-        <a href="/blog/">blog</a>
-        <a href="/projects/">projects</a>
-      </nav>
+  <nav>
+    <div class="header flex align-center font-ui">
+      <span class="flex-grow">
+        <a class="internal-link plain" href="/">Henrik Næss</a>
+      </span>
+      <span class="flex-shrink ssr">
+        <a href="/contact/" class="muted plain">contact</a>
+        <a href="/now/" class="muted plain ssl mh">now</a>
+        <a href="/blog/" class="muted plain ssl mh">blog</a>
+        <a href="/projects/" class="muted plain ssl mh">projects</a>
+      </span>
     </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      {% block content %} {% endblock %}
-    </div>
-  </section>
+  </nav>
+  <main>
+    {% block content %} {% endblock %}
+  </main>
 </body>
 
 </html>
